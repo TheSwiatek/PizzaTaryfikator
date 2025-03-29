@@ -1,3 +1,4 @@
+let liczbaclassic = 0;
 let promocjaTF = 0;
 let wspolpracaLiczenie = 0;
 let znizkaTyg = 0;
@@ -133,6 +134,7 @@ function tyg(tygodnia) {
   }
 }
 function liczenie() {
+  liczbaclassic = classic;
   classic = document.getElementById("classicHtml").value;
   let premium = document.getElementById("premium").value;
   let gold = document.getElementById("gold").value;
@@ -154,6 +156,7 @@ function liczenie() {
   if (bahama == true) {
     if (classic >= 2) {
       classic--;
+      liczbaclassic--;
       cena =
         classic * classicc +
         premium * premiumc +
@@ -437,20 +440,20 @@ function liczenie() {
   // =--------------- Wypis Zestawów ---------------=
   if(classic > 0) {
     if(bahama == true) {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic`
+        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic`
     }else if(blackmoon == true) {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic (zniżka BM)`
+        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (zniżka BM)`
     }else if(tyg == true && classic >= 2) {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic (oferta tygodnia 2 za 2)`
+        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 2 za 2)`
     }else if(tyg2 == true && classic >= 3) {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic (oferta tygodnia 3 za 3)`
+        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 3 za 3)`
     }else if(tyg3 == true && classic >= 3) {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic (oferta tygodnia 2+1 gratis)`
+        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 2+1 gratis)`
     }else if (tyg4 == true && classic >= 4) {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic (oferta tygodnia 3+1 gratis)`
+        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 3+1 gratis)`
     }else {
-        document.getElementById("wklasyczne").innerHTML = `${classic} x classic`
-    }
+       document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic`
+  }
     
     
     

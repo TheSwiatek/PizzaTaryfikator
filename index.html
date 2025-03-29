@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="baner">
+        <h2>Kalkulator Dla Opornych</h2>
+    </header>
+    <div class="zestawyDiv">
+        <input type="text" id="classicHtml" class="ilosc"> <a> x Zestaw Classic</a> <br>
+        <input type="text" id="premium" class="ilosc"> <a> x Zestaw Premium</a> <br>
+        <input type="text" id="gold" class="ilosc"> <a> x Zestaw Gold</a> <br>
+        <input type="text" id="king" class="ilosc"> <a> x Zestaw King</a> <br>
+    </div>
+
+    <div class="zarcieDiv">
+        <input type="text" class="ilosc" id="pizza"> <a>X Pizza</a> <br>
+        <input type="text" class="ilosc" id="sok"> <a>X Sok</a> <br>
+        <input type="text" class="ilosc" id="pizzapiec"> <a>X Pizza z pieca</a> <br>
+        <input type="text" class="ilosc" id="cola"> <a>X Cola </a> <br>
+    </div>
+
+    <div class="wspolprace">
+        <div class="bahamaM">
+            <input type="checkbox" name="wspl" id="bahama" class="radioW" onchange="wspolpraca(0)"> Bahama
+        </div>
+        <div class="blackmoonM">
+            <input type="checkbox" name="wspl" id="blackmoon" class="radioW" onchange="wspolpraca(1)"> Blackmoon     
+        </div>
+    </div>
+
+    <div class="tygodnia">
+        <div class="tyg2za2">
+            <input type="checkbox" name="tygodnia" class="radioW" id="tygId" onchange="tyg(0)"> <a>2 za 2</a> <br>
+
+        </div>
+        
+        <div class="tyg3za3">
+            <input type="checkbox" name="tygodnia" class="radioW" id="tyg2Id" onchange="tyg(1)"> <a>3 za 3</a> <br>
+        </div>
+
+        <div class="tyg2g">
+            <input type="checkbox" name="tygodnia" class="radioW" id="tyg3Id" onchange="tyg(2)"> <a>2 + 1 gratis</a> <br>
+        </div>
+
+        <div class="tyg3g">
+            <input type="checkbox" name="tygodnia" class="radioW" id="tyg4Id" onchange="tyg(3)"> <a>3 + 1 gratis</a> <br>
+        </div>
+    </div>
+
+    <div class="wynik">
+        <button id="oblicz" class="podsumowanie" onclick="liczenie()">Wylicz</button>
+        <p id="wynik">Wychodzi:</p>
+        <a id="opis">Szczegóły:</a> <a  id="wklasyczne"></a> <a id="wpremium"></a> <a id="wgold"></a> <a id="wking"></a> <a id="wpizza"></a> <a id="wsok"></a> <a id="wpizzapiec"></a> <a id="wcola"></a>
+    </div>
+    <div class="zdjecie">
+            <img src="pizza.gif" alt="pizza">
+        </div>
+
+    <footer class="fill">
+        <h5>Made By: Świątek</h5>
+    </footer>
+</body>
+</html>

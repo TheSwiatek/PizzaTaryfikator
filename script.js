@@ -134,8 +134,9 @@ function tyg(tygodnia) {
   }
 }
 function liczenie() {
-  liczbaclassic = classic;
   classic = document.getElementById("classicHtml").value;
+  liczbaclassic = classic;
+  console.log("liczbaclassic na poczatku " , liczbaclassic);
   let premium = document.getElementById("premium").value;
   let gold = document.getElementById("gold").value;
   let king = document.getElementById("king").value;
@@ -155,6 +156,7 @@ function liczenie() {
   // -------------- Bahama --------------
   if (bahama == true) {
     if (classic >= 2) {
+      classicc = 1200;
       classic--;
       liczbaclassic--;
       cena =
@@ -191,6 +193,7 @@ function liczenie() {
   }
   // --------------  Tygodnia 2 za 2  --------------
   if (tyg == true) {
+    classicc = 1200;
     let ile = classic % 2;
     console.log(
       "Sprawdzanie skryptow - Aktualnie sprawdzane: ",
@@ -236,6 +239,7 @@ function liczenie() {
   // -------------- Tygodnia 3 za 3 --------------
 
   if (tyg2 == true) {
+    classicc = 1200;
     let ile = classic % 3;
     console.log("reszta z dzielenia modulo = ", ile);
     if (ile == 0) {
@@ -292,6 +296,7 @@ function liczenie() {
   // -------------- Oferta 2 + 1 --------------
 
   if (tyg3 == true) {
+    classicc = 1200;
     if (classic % 3 == 0) {
       let classicDoProm = classic / 3;
       console.log("tyle po dzieleniu 2+1 ", classicDoProm);
@@ -351,6 +356,7 @@ function liczenie() {
   // -------------- Tygodniowa 3 + 1 gratis --------------
 
   if (tyg4 == true && classic >= 4) {
+    classicc = 1200;
     if (classic % 4 == 0) {
         let classicDoProm = classic / 4;
         classic = classicDoProm * 3;
@@ -422,6 +428,7 @@ function liczenie() {
 
   // -------------- Brak Promocji i wspolpracy --------------
   if (promocjaTF == 0) {
+    classicc = 1200;
     cena =
       classic * classicc +
       premium * premiumc +
@@ -438,18 +445,19 @@ function liczenie() {
   // =--------------- Wypisanie faktury ---------------=
 
   // =--------------- Wypis Zestawów ---------------=
-  if(classic > 0) {
+  console.log("jestesmy na finito a to jest liczbaclassic", liczbaclassic);
+  if(liczbaclassic > 0) {
     if(bahama == true) {
         document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic`
     }else if(blackmoon == true) {
         document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (zniżka BM)`
-    }else if(tyg == true && classic >= 2) {
+    }else if(tyg == true && liczbaclassic >= 2) {
         document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 2 za 2)`
-    }else if(tyg2 == true && classic >= 3) {
+    }else if(tyg2 == true && liczbaclassic >= 3) {
         document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 3 za 3)`
-    }else if(tyg3 == true && classic >= 3) {
+    }else if(tyg3 == true && liczbaclassic >= 3) {
         document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 2+1 gratis)`
-    }else if (tyg4 == true && classic >= 4) {
+    }else if (tyg4 == true && liczbaclassic >= 4) {
         document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic (oferta tygodnia 3+1 gratis)`
     }else {
        document.getElementById("wklasyczne").innerHTML = `${liczbaclassic} x classic`
